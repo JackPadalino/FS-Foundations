@@ -42,6 +42,24 @@ describe('Calculator using reverse polish notation', () => {
     expect(rpnCalculatorInstance.value()).toBe(9);
   });
 
+  it('adds four numbers', () => {
+    /*
+     Infix: 2+3+4
+     Postfix: 2 3 + 4 +
+    */
+
+    rpnCalculatorInstance.push(2);
+    rpnCalculatorInstance.push(3);
+    rpnCalculatorInstance.plus();
+    expect(rpnCalculatorInstance.value()).toBe(5);
+    rpnCalculatorInstance.push(4);
+    rpnCalculatorInstance.plus();
+    expect(rpnCalculatorInstance.value()).toBe(9);
+    rpnCalculatorInstance.push(3);
+    rpnCalculatorInstance.plus();
+    expect(rpnCalculatorInstance.value()).toBe(12);
+  });
+
   it('subtracts two numbers', () => {
     /*
      Infix: 2-3
