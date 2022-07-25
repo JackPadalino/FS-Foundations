@@ -1,5 +1,8 @@
 /* eslint-disable no-unused-vars, no-throw-literal*/
 
+//~~~~~coding the solution the 'long' way~~~~~//
+
+
 function RPNCalculator(){
     this.stack = [];
 };
@@ -29,11 +32,7 @@ RPNCalculator.prototype.plus = function(){
 
 // the 'value' method
 RPNCalculator.prototype.value = function(){
-    let sum = 0;
-    for(let i of this.stack){
-        sum+=i;
-    };
-    return sum;
+    return this.stack[0];
 };
 
 // the 'minus' method
