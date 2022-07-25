@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars, no-throw-literal*/
 
+/*
 //~~~~~coding the solution the 'long' way~~~~~//
-
 
 function RPNCalculator(){
     this.stack = [];
@@ -20,7 +20,7 @@ RPNCalculator.prototype.pop = function(){
 
 // the 'plus' method
 RPNCalculator.prototype.plus = function(){
-    if(this.stack.length<=1){
+    if(this.stack.length<2){
         throw 'rpnCalculatorInstance is empty';
     };
     const poppedNum1 = this.pop();
@@ -69,4 +69,57 @@ RPNCalculator.prototype.divide = function(){
     const quotient = poppedNum2/poppedNum1;
     this.push(quotient);
     return quotient;
+};
+*/
+
+
+//~~~~~updated code~~~~~//
+
+function RPNCalculator(){
+    this.stack = [];
+};
+
+// master computing method
+RPNCalculator.prototype.runFunction = function(aFunction){
+    if(this.stack.length<2){
+        throw 'rpnCalculatorInstance is empty';
+    };
+    const poppedNum1 = this.stack.pop();
+    const poppedNum2 = this.stack.pop();
+    const result = aFunction(poppedNum1,poppedNum2)
+    this.push(result);
+};
+
+// the 'value' method
+RPNCalculator.prototype.value = function(){
+    return this.stack[0];
+};
+
+// the 'push' method
+RPNCalculator.prototype.push = function(num){
+    this.stack.push(num);
+};
+
+// the 'plus' method
+RPNCalculator.prototype.plus = function(){
+    const aFunction = (num1,num2)=>num1+num2;
+    this.runFunction(aFunction);
+};
+
+// the 'minus' method
+RPNCalculator.prototype.minus = function(){
+    const aFunction = (num1,num2)=>num2-num1;
+    this.runFunction(aFunction);
+};
+
+// the 'times' method
+RPNCalculator.prototype.times = function(){
+    const aFunction = (num1,num2)=>num1*num2;
+    this.runFunction(aFunction);
+};
+
+// the 'divide' method
+RPNCalculator.prototype.divide = function(){
+    const aFunction = (num1,num2)=>num2/num1;
+    this.runFunction(aFunction);
 };
