@@ -41,6 +41,8 @@ describe('Pokemon', () => {
     it('the `isDefeated` method returns `true` if the health property is <= 0', () => {
       pikachu.health = pikachu.health - 250;
       expect(pikachu.isDefeated()).toBe(true);
+      pikachu.health = 0;
+      expect(pikachu.isDefeated()).toBe(true);
     });
   });
 });
