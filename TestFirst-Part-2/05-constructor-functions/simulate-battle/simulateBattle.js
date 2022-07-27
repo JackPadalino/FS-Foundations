@@ -13,31 +13,22 @@ Pokemon.prototype.biteAttack = function(){
 };
 
 Pokemon.prototype.isDefeated = function(){
-    if(this.health >= 1){
-        return false;
-    }else{
-        return true
-    };
-};
-
+    return this.health <= 0;
+}
 //~~~~~Simulate battle function~~~~~//
 const simulateBattle=(poke1,poke2,attacksFirst)=>{
     let firstAttacker;
     let secondAttacker
-    if(attacksFirst==poke1.name){
+    if(attacksFirst===poke1.name){
         firstAttacker = poke1;
         secondAttacker = poke2;
     }else{
         firstAttacker = poke2;
         secondAttacker = poke1;
     };
-    while(firstAttacker.isDefeated()==false && secondAttacker.isDefeated()==false){
+    while(firstAttacker.isDefeated()===secondAttacker.isDefeated()){
         secondAttacker.health -= firstAttacker.biteAttack();
         firstAttacker.health -= secondAttacker.biteAttack();
     };
-    if(firstAttacker.isDefeated()){
-        return `${secondAttacker.name} Wins!`
-    }else{
-        return `${firstAttacker.name} Wins!`
-    };
+    return (firstAttacker.isDefeated() ? secondAttacker.name : firstAttacker.name) + ' Wins!';
 };
