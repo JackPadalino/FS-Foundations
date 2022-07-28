@@ -14,6 +14,7 @@ function yourFunctionRunner(){
     };
     return finalString;
    /*
+    // solving use the map() function
     const funcArgs = Array.from(arguments);
     const funcStringsArray = funcArgs.map(func => func());
     const finalString = funcStringsArray.join('');
