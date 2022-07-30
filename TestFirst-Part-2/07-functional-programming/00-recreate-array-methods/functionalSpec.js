@@ -46,6 +46,8 @@ describe('the function map', () => {
     spyOn(Array.prototype, 'map').and.callThrough();
   });
 
+  const doubler=(num)=>num*2;
+
   // Where is doubler defined? This is something you may need to create...
   it('create a function that takes an element and returns double of it', () => {
     expect(doubler(15)).toBe(30);
@@ -136,7 +138,7 @@ describe('the function includes', () => {
     // You can't use the built in `Array.prototype.includes`
     spyOn(Array.prototype, 'includes').and.callThrough();
   });
-
+  
   it('should return true if a collection includes a user-specified value', () => {
     expect(includes([1, 2, 3], 2)).toBe(true);
     expect(
