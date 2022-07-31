@@ -69,3 +69,43 @@ const keyifyArrayOfObjects=(key,arr)=>{
     const keyifiedSupes=arr.reduce(keyify,{});
     return keyifiedSupes;
 };
+
+//~~~~~powerLevelAverage~~~~~//
+const powerLevelAverage=arr=>{
+    const addPowerLevel=(totalPowerLevel,currentSupe)=>{
+        totalPowerLevel+=currentSupe.powerLevel;
+        return totalPowerLevel;
+    }; 
+    const totalPowerLevel=arr.reduce(addPowerLevel,0);
+    const averagePowerLevel=Math.round(totalPowerLevel/arr.length);
+    return averagePowerLevel;
+};
+
+//~~~~~mapReduce~~~~~//
+const mapReduce = (arr, aFunc) => {
+    const newFunc=(newArray,currentItem)=>{
+      newArray.push(aFunc(currentItem));
+      return newArray;
+    };
+    const newArray=arr.reduce(newFunc,[]);
+    return newArray;
+};
+
+//~~~~~filterReduce~~~~~//
+const filterReduce = (arr, aFunc) => {
+    const newFunc=(newArray,currentItem)=>{
+      if(aFunc(currentItem)) newArray.push(currentItem);
+      return newArray;
+    };
+    const newArray=arr.reduce(newFunc,[]);
+    return newArray;
+};
+
+//~~~~~inYourBudget~~~~~//
+const inYourBudget=(budget,arr)=>{
+    const filteredItems=arr.filter(item=>item.price<budget);
+    const mappedItems=filteredItems.map(item=>item.item);
+    return mappedItems;
+};
+
+//~~~~~separateAndReturnNames~~~~~//
