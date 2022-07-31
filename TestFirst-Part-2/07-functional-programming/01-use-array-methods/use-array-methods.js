@@ -34,3 +34,12 @@ const swapCase=aString=>{
     return finalString;
 };
 
+//~~~~~extensionSearch~~~~~//
+const extensionSearch=(ext,arr)=>{
+    const files=arr.filter(file=>file.includes(ext));
+    return files;
+};
+
+//~~~~~getPopulation~~~~~//
+// not working! In the test spec we are passing in the NAME of the country, NOT the whole object
+//const getPopulation=(arr)=>arr.reduce((popTotal,currentCountry)=>popTotal+currentCountry.population,0);
