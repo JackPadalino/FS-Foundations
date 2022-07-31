@@ -109,3 +109,27 @@ const inYourBudget=(budget,arr)=>{
 };
 
 //~~~~~separateAndReturnNames~~~~~//
+const separateAndReturnNames=(arr,whichName,nameLength)=>{
+    arr.map(supe=>{
+        //const nameArray=supe.name.split(' ');
+        //const firstName=nameArray[0];
+        //const lastName=nameArray[1];
+        const [firstName,lastName]=supe.name.split(' ');
+        supe.firstName=firstName;
+        supe.lastName=lastName;
+        return supe;
+    });
+    const filteredSupeNames=arr.filter(supe=>supe[whichName].length<=nameLength);
+    const finalSupeNames=filteredSupeNames.map(supe=>supe[whichName]);
+    return finalSupeNames;
+};
+
+//~~~~~todo list~~~~~//
+const priorityTodoDuration=arr=>{
+    const filteredTasks=arr.filter(task=>task.priority==='high');
+    const addTime=(totalTime,currentTask)=>{
+        return totalTime+currentTask.duration;
+    };
+    const totalTime=filteredTasks.reduce(addTime,0);
+    return totalTime;
+};

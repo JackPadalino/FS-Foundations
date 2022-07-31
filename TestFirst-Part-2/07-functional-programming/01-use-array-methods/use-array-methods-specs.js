@@ -653,7 +653,7 @@ describe('using reduce', () => {
 
       priorityTodoDuration(todoList);
 
-      // expect(Array.prototype.reduce).toHaveBeenCalled();
+      expect(Array.prototype.reduce).toHaveBeenCalled();
       expect(Array.prototype.filter).toHaveBeenCalled();
     });
   });
