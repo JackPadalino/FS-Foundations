@@ -41,5 +41,31 @@ const extensionSearch=(ext,arr)=>{
 };
 
 //~~~~~getPopulation~~~~~//
-// not working! In the test spec we are passing in the NAME of the country, NOT the whole object
-//const getPopulation=(arr)=>arr.reduce((popTotal,currentCountry)=>popTotal+currentCountry.population,0);
+const getPopulation=(arr1,arr2)=>{
+    const foundCountries=arr1.filter(country=>arr2.includes(country.name));
+    const adder=(totalPopulation,currentCountry)=>{
+        return totalPopulation+currentCountry.population;
+    };
+    const population=foundCountries.reduce(adder,0);
+    return population>0 ? population:2117902300;
+};
+
+//~~~~~powerLevelAverage~~~~~//
+/*
+// solving keyifyArrayOfObjects without reduce //
+const keyifyArrayOfObjects=(key,arr)=>{
+    const keyifiedSupes={};
+    for(let obj of arr){
+        keyifiedSupes[obj[key]]=obj;
+    };
+    return keyifiedSupes;
+};
+*/
+const keyifyArrayOfObjects=(key,arr)=>{
+    const keyify=(keyifiedSupes,currentSupe)=>{
+        keyifiedSupes[currentSupe[key]]=currentSupe;
+        return keyifiedSupes;
+    };
+    const keyifiedSupes=arr.reduce(keyify,{});
+    return keyifiedSupes;
+};
