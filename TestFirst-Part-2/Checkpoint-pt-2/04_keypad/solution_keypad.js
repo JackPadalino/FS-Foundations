@@ -9,6 +9,7 @@ const presses=str=>{
         4:['s','z','2','3','4','5','6','8'],
         5:['7','9']
     };
+    // getCharValue retrieves a character's key if it is in a pair's array
     const getCharValue=char=>{
         for(const [key,val] of Object.entries(keypadValues)){
                 if(val.includes(char)){
