@@ -50,6 +50,15 @@ const getPopulation=(arr1,arr2)=>{
     return population>0 ? population:2117902300;
 };
 
+const keyifyArrayOfObjects=(key,arr)=>{
+    const keyify=(keyifiedSupes,currentSupe)=>{
+        keyifiedSupes[currentSupe[key]]=currentSupe;
+        return keyifiedSupes;
+    };
+    const keyifiedSupes=arr.reduce(keyify,{});
+    return keyifiedSupes;
+};
+
 //~~~~~powerLevelAverage~~~~~//
 /*
 // solving keyifyArrayOfObjects without reduce //
@@ -61,14 +70,6 @@ const keyifyArrayOfObjects=(key,arr)=>{
     return keyifiedSupes;
 };
 */
-const keyifyArrayOfObjects=(key,arr)=>{
-    const keyify=(keyifiedSupes,currentSupe)=>{
-        keyifiedSupes[currentSupe[key]]=currentSupe;
-        return keyifiedSupes;
-    };
-    const keyifiedSupes=arr.reduce(keyify,{});
-    return keyifiedSupes;
-};
 
 //~~~~~powerLevelAverage~~~~~//
 const powerLevelAverage=arr=>{
@@ -103,7 +104,7 @@ const filterReduce = (arr, aFunc) => {
 
 //~~~~~inYourBudget~~~~~//
 const inYourBudget=(budget,arr)=>{
-    const filteredItems=arr.filter(item=>item.price<budget);
+    const filteredItems=arr.filter(item=>item.price<=budget);
     const mappedItems=filteredItems.map(item=>item.item);
     return mappedItems;
 };
@@ -119,12 +120,12 @@ const separateAndReturnNames=(arr,whichName,nameLength)=>{
         supe.lastName=lastName;
         return supe;
     });
-    const filteredSupeNames=arr.filter(supe=>supe[whichName].length<=nameLength);
-    const finalSupeNames=filteredSupeNames.map(supe=>supe[whichName]);
+    const mappedSupeNames=arr.map(supe=>supe[whichName]);
+    const finalSupeNames=mappedSupeNames.filter(supe=>supe.length<=nameLength);
     return finalSupeNames;
 };
 
-//~~~~~todo list~~~~~//
+//~~~~~priorityTodoDuration~~~~~//
 const priorityTodoDuration=arr=>{
     const filteredTasks=arr.filter(task=>task.priority==='high');
     const addTime=(totalTime,currentTask)=>{
