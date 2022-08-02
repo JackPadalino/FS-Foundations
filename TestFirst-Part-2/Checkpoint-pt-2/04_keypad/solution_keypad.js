@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 
+// object to hold the values of all keys on the keypad
 const keypadValues={
         1:['a','d','g','j','m','p','t','w',' ','1'],
         2:['b','e','h','k','n','q','u','x','0'],
