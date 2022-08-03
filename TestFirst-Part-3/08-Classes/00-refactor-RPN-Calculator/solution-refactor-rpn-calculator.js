@@ -4,51 +4,48 @@
   Refactor the constructor function below and use ES2015 Class Syntax
 */
 
-function RPNCalculator() {
-  this.numStack = [];
-}
-
-RPNCalculator.prototype.push = function (num) {
-  this.numStack.push(num);
-};
-
-RPNCalculator.prototype.popCompute = function (operationFunc) {
-  if (this.numStack.length < 2) {
-    throw 'rpnCalculatorInstance is empty';
-  } else {
-    const num1 = this.numStack.pop();
-    const num2 = this.numStack.pop();
-
-    this.push(operationFunc(num1, num2));
-  }
-};
-
-RPNCalculator.prototype.plus = function () {
-  this.popCompute((first, second) => first + second);
-
-  /* does this arrow function syntax look funky? It's missing a return statement! AND a code block!
-  When an arrow function is condensed to a single line expression, it can be reduced to a single line of code which saves
-  a few characters to type (whew :) ) and enhances readability.
-  the function passed to popCompute could also use the standard syntax:
-  this.popCompute((first,second) => {
-    return first + second;
-  })
-  It is not necessary to use the shorthand single line expression syntax, both formats behave exactly the same.
-  */
-};
-
-RPNCalculator.prototype.value = function () {
-  return this.numStack[this.numStack.length - 1];
-};
-
-RPNCalculator.prototype.minus = function () {
-  this.popCompute((first, second) => second - first);
-};
-
-RPNCalculator.prototype.times = function () {
-  this.popCompute((first, second) => first * second);
-};
-
-RPNCalculator.prototype.divide = function () {
-  this.popCompute((first, second) => second / first);
+//~~~~solution #3 w/classes~~~~~//
+class RPNCalculator{
+  // class constructor function
+  constructor(){
+      this.stack=[];
+  };
+  // master computing method
+  runFunction(aFunction){
+      if(this.stack.length<2){
+          throw 'rpnCalculatorInstance is empty';
+      };
+      const poppedNum1 = this.stack.pop();
+      const poppedNum2 = this.stack.pop();
+      const result = aFunction(poppedNum1,poppedNum2)
+      this.push(result);
+  };
+  // the 'value' method
+  value(){
+      return this.stack[0];
+  };
+  // the 'push' method
+  push(num){
+      this.stack.push(num);
+  };
+  // the 'plus' method
+  plus(){
+      const aFunction = (num1,num2)=>num1+num2;
+      this.runFunction(aFunction);
+  };
+  // the 'minus' method
+  minus(){
+      const aFunction = (num1,num2)=>num2-num1;
+      this.runFunction(aFunction);
+  };
+  // the 'times' method
+  times(){
+      const aFunction = (num1,num2)=>num1*num2;
+      this.runFunction(aFunction);
+  };
+  // the 'divide' method
+  divide(){
+      const aFunction = (num1,num2)=>num2/num1;
+      this.runFunction(aFunction);
+  };
 };
