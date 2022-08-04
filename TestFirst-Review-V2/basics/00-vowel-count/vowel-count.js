@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 
 //~~~~~vowelsCount~~~~~//
-const vowelsCount=str=>{
+const vowelsCount=(str)=>{
     const vowelsArr=['a','e','i','o','u'];
     const vowelsObj={
         a: 0,
