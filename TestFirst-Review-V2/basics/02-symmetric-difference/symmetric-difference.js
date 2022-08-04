@@ -10,4 +10,14 @@
 
 /* eslint-disable no-unused-vars */
 
-function difference(arrayA, arrayB) {}
+function difference(arr1, arr2){
+    const diffArr=arr1.filter(item=>!arr2.includes(item));
+    return diffArr;
+};
+
+const symmetricDiff=(arr1,arr2)=>{
+    const diffArr1=difference(arr1,arr2);
+    const diffArr2=difference(arr2,arr1);
+    const symmetricDifference=[...diffArr1,...diffArr2];
+    return symmetricDifference;
+};
