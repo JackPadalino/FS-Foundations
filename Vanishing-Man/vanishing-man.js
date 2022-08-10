@@ -122,14 +122,7 @@ class VanishingMan{
     };
   };
   simulateVanishingMan(){
-    const newMan = new VanishingMan('coffee');
-    const guessesBank=['c','f','r','z','x','w','t','v'];
-    guessesBank.forEach(guess=>{
-      newMan.submitGuess(guess);
-      newMan.computeGameState();
-      newMan.getGameStateMessage();
-      newMan.getSecretWordPuzzle()
-    });
+    return null;
   };
 
 //closing bracket for VanishingMan class
