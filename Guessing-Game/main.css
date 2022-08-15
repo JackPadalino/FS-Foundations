@@ -1,1 +1,49 @@
-/* Write your CSS code in this file */
+
+/*
+Color scheme
+blue: #98D7E6
+salmon: #FC8571
+yellow: #FFDB70
+off-white: #F7F8FA
+*/
+
+body{
+    background:#F7F8FA;
+    display:flex;
+    justify-content: center;
+}
+
+#main-game-container{
+    background:#98D7E6;
+    border-radius:5px;
+    height:300px;
+    width:500px;
+
+}
+
+#title-container1{
+    display: flex;
+    justify-content: center;
+}
+
+#title-container2{
+    display: flex;
+    justify-content: center;
+    width:400px;
+    background:#FFDB70;
+    border-radius:5px;
+    margin-top:20px;
+    margin-bottom:20px;
+    border:dotted 4px;
+}
+
+#guessing-container{
+    display:flex;
+    justify-content: center;
+}
+
+#hint-play-again-container{
+    display:flex;
+    justify-content: center;
+    margin-top:20px;
+}
