@@ -48,3 +48,7 @@ body{
     justify-content: center;
     margin-top:20px;
 }
+
+#incorrect-guesses-container{
+    background:green;
+}
