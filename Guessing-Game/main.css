@@ -67,6 +67,7 @@ html,body{
 
 #enter-guess-form{
     margin-right:5px;
+    border-radius:5px;
 }
 
 #hint-button{
