@@ -16,41 +16,47 @@ html,body{
 }
 
 #main-game-container{
-    background:#FC8571;
+    background:#FFDB70;
     border-radius:5px;
     height:300px;
     width:500px;
-    border:solid 2px #fc7171;
-    box-shadow: 10px 10px 10px #888888;
+    /*border:dotted 4px;*/
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.750);
 }
 
-#title-container1{
+#title-container{
     display: flex;
     justify-content: center;
-}
-
-#title-container2{
-    background:#FFDB70;
-    display: flex;
-    justify-content: center;
-    width:400px;
-    border-radius:5px;
     margin-top:20px;
-    margin-bottom:20px;
-    border:dotted 4px;
+    /*background:green;*/
 }
 
 #guessing-container{
     display:flex;
     justify-content: center;
+    margin-top:20px;
+    /*background:red;*/
+}
+
+#incorrect-guesses-container{
+    display:flex;
+    justify-content: space-evenly;
+    width:auto;
+    margin-top:20px;
+    /*background:red;*/
+}
+
+.incorrect-guess{
+    border:solid black 1px;
+    width:40px;
+    height:40px;
+    border-radius:5px;
+    background:#ffebb0;
 }
 
 #hint-play-again-container{
     display:flex;
     justify-content: center;
     margin-top:20px;
-}
-
-#incorrect-guesses-container{
-    /*pass*/
+    /*background:blue;*/
 }
