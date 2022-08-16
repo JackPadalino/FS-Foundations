@@ -7,18 +7,20 @@ yellow: #FFDB70
 off-white: #F7F8FA
 */
 
-body{
-    background:#F7F8FA;
+html,body{
+    background:#98D7E6;
     display:flex;
     justify-content: center;
+    align-items: center;
+    height:100%;
 }
 
 #main-game-container{
-    background:#98D7E6;
+    background:#FC8571;
     border-radius:5px;
     height:300px;
     width:500px;
-    border:solid 2px #87c0cf;
+    border:solid 2px #fc7171;
     box-shadow: 10px 10px 10px #888888;
 }
 
@@ -28,10 +30,10 @@ body{
 }
 
 #title-container2{
+    background:#FFDB70;
     display: flex;
     justify-content: center;
     width:400px;
-    background:#FFDB70;
     border-radius:5px;
     margin-top:20px;
     margin-bottom:20px;
@@ -50,5 +52,5 @@ body{
 }
 
 #incorrect-guesses-container{
-    background:green;
+    /*pass*/
 }
