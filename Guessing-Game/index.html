@@ -9,12 +9,16 @@
   <body>
     <div id="main-game-container">
       <div id="title-container">
-        <h1 id='title' style='color:#FC8571;font-family: Helvetica;'>Guess That Number!</h1>
+        <h1 id='title' style='color:#F7F8FA;font-family: Helvetica;'><b>THE GUESSING GAME</b></h1>
+      </div>
+
+      <div id="message-container">
+        <h3 id='message' style='color:#F7F8FA;font-family: Helvetica;'>Guess a number 1-100</h3>
       </div>
 
       <div id="guessing-container">
         <input id='enter-guess-form' type="text"  style="width:200px;" placeholder="Enter guess here">
-        <input id='submit-guess-button' type="submit"  style="width:100px;" value="Guess!">
+        <input id='submit-guess-button' class="btn btn-light" type="submit"  style="width:100px;" value="Guess!">
       </div>
 
       <div id="incorrect-guesses-container">
@@ -36,8 +40,8 @@
       </div>
 
       <div id="hint-play-again-container">
-        <input id='hint-button' type="submit" value="Hint?">
-        <input id='play-again-button' type="submit" value="Play again?">
+        <input id='hint-button' class="btn btn-outline-light" type="submit" value="Hint?">
+        <input id='play-again-button' class="btn btn-outline-danger" type="submit" value="Play again?">
       </div>
 
     </div>

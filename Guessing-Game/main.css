@@ -8,7 +8,7 @@ off-white: #F7F8FA
 */
 
 html,body{
-    background:#98D7E6;
+    background:#F7F8FA;
     display:flex;
     justify-content: center;
     align-items: center;
@@ -16,25 +16,30 @@ html,body{
 }
 
 #main-game-container{
-    background:#FFDB70;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background:#98D7E6;
     border-radius:5px;
-    height:300px;
-    width:500px;
-    /*border:dotted 4px;*/
+    height:400px;
+    width:700px;
     box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.750);
 }
 
 #title-container{
     display: flex;
     justify-content: center;
-    margin-top:20px;
     /*background:green;*/
+}
+
+#message-container{
+    display:flex;
+    justify-content: center;
 }
 
 #guessing-container{
     display:flex;
     justify-content: center;
-    margin-top:20px;
     /*background:red;*/
 }
 
@@ -42,7 +47,6 @@ html,body{
     display:flex;
     justify-content: space-evenly;
     width:auto;
-    margin-top:20px;
     /*background:red;*/
 }
 
@@ -51,12 +55,19 @@ html,body{
     width:40px;
     height:40px;
     border-radius:5px;
-    background:#ffebb0;
+    background:#98D7E6;
 }
 
 #hint-play-again-container{
     display:flex;
     justify-content: center;
-    margin-top:20px;
     /*background:blue;*/
+}
+
+#enter-guess-form{
+    margin-right:5px;
+}
+
+#hint-button{
+    margin-right:5px;
 }
