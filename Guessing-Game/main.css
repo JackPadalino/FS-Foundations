@@ -45,7 +45,8 @@ html,body{
 
 #incorrect-guesses-container{
     display:flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    gap:20px;
     width:auto;
     /*background:red;*/
 }
