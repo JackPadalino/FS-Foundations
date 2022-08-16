@@ -70,6 +70,15 @@ html,body{
     border-radius:5px;
 }
 
+#submit-guess-button{
+    background-color: #F7F8FA !important;
+}
+
 #hint-button{
+    background-color: #FFDB70 !important;
     margin-right:5px;
+}
+
+#play-again-button{
+    background-color: #FC8571 !important;
 }

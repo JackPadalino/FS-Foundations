@@ -20,3 +20,8 @@ submitGuessButton.addEventListener('click',function(){
     const element=document.getElementById('enter-guess-form');
     getGuessAndUpdate(element);
 });
+
+// generate winning number
+function generateWinningNumber() {
+    return Math.floor(Math.random() * 100) + 1;
+}
