@@ -62,7 +62,7 @@ html,body{
     /*background:red;*/
 }
 
-.incorrect-guess{
+.incorrect-guess-box{
     display:flex;
     justify-content: center;
     border:solid black 1px;
