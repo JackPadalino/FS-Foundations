@@ -9,7 +9,6 @@ function playGame(){
     guessButton.addEventListener('click',function(){
         const guessForm=document.getElementById('enter-guess-form');
         const guess=Number(guessForm.value);
-        guessForm.value='';
         let result=game.playersGuessSubmission(guess);
         if(!(result==='You Win!')){
             let incorrectGuessBox=document.getElementById(`incorrect-guess-box-${game.pastGuesses.length}`);
@@ -19,6 +18,7 @@ function playGame(){
         };
         let messageText=document.getElementById('message');
         messageText.innerHTML=result;
+        guessForm.value='';
     });
 
     // get a hint
@@ -37,11 +37,6 @@ function playGame(){
         // reset message HTML
         let messageText=document.getElementById('message');
         messageText.innerHTML='Pick a number 1-100.';
-        // reset 'incorrect guesses' HTML
-        const resetHintBox=box=>{
-            box.innerHTML='?';
-            return box;
-        };
         // reset 'incorrect guess' boxes background color
         const incorrectGuessBoxes=document.getElementsByClassName('incorrect-guess-box');
         for(let box of incorrectGuessBoxes){
@@ -53,8 +48,6 @@ function playGame(){
             box.innerHTML='?';
         };
     });
-// final closing bracket
 };
 
-// start new game when page loads
 playGame();
