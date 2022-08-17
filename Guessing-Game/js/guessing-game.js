@@ -107,21 +107,12 @@ function playGame(){
         // reset message HTML
         let messageText=document.getElementById('message');
         messageText.innerHTML='Pick a number 1-100.';
-        // reset 'incorrect guesses' HTML
-        const resetHintBox=box=>{
-            box.innerHTML='?';
-            return box;
-        };
         // reset 'incorrect guess' boxes background color
         const incorrectGuessBoxes=document.getElementsByClassName('incorrect-guess-box');
-        for(let box of incorrectGuessBoxes){
-            box.style.background='#98D7E6';
-        };
+        Array.prototype.forEach.call(incorrectGuessBoxes,box=>box.style.background='#98D7E6');
         // reset 'incorrect guess' boxes HTML
         const incorrectGuessHeadings=document.getElementsByClassName('incorrect-guess');
-        for(let box of incorrectGuessHeadings){
-            box.innerHTML='?';
-        };
+        Array.prototype.forEach.call(incorrectGuessHeadings,box=>box.innerHTML='?');
     });
 // final closing bracket
 };
