@@ -23,7 +23,7 @@ html,body{
     border-radius:5px;
     height:400px;
     width:700px;
-    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.750);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.500);
 }
 
 #title-container{
@@ -35,6 +35,17 @@ html,body{
 #message-container{
     display:flex;
     justify-content: center;
+}
+
+#enter-guess-form{
+    margin-right:5px;
+    border-radius:5px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.500);
+}
+
+#submit-guess-button{
+    background-color: #F7F8FA !important;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.500);
 }
 
 #guessing-container{
@@ -59,6 +70,7 @@ html,body{
     height:40px;
     border-radius:5px;
     background:#98D7E6;
+    box-shadow: 0px 2.5px 10px rgba(0, 0, 0, 0.500);
 }
 
 #hint-play-again-container{
@@ -67,20 +79,13 @@ html,body{
     /*background:blue;*/
 }
 
-#enter-guess-form{
-    margin-right:5px;
-    border-radius:5px;
-}
-
-#submit-guess-button{
-    background-color: #F7F8FA !important;
-}
-
 #hint-button{
     background-color: #FFDB70 !important;
     margin-right:5px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.500);
 }
 
 #play-again-button{
     background-color: #FC8571 !important;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.500);
 }
