@@ -106,7 +106,7 @@ function playGame(){
         game = newGame();
         // reset message HTML
         let messageText=document.getElementById('message');
-        messageText.innerHTML='Pick a number 1-100.';
+        messageText.innerHTML='Pick a number 1-100. You have five guesses!';
         // reset 'incorrect guess' boxes background color
         const incorrectGuessBoxes=document.getElementsByClassName('incorrect-guess-box');
         Array.prototype.forEach.call(incorrectGuessBoxes,box=>box.style.background='#98D7E6');
