@@ -1,2 +1,2 @@
-# fullstack-foundations
-Repo for Fullstack foundations work
+# Fullstack-Foundations
+Repo for Fullstack Foundations bootcamp work
